@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-package com.nu.art.actionsProcessor.core;
+package com.nu.art.genericProcessor.core;
 
 public abstract class NestedProcessor<Type extends Bean>
 		extends BeanProcessor<Type> {

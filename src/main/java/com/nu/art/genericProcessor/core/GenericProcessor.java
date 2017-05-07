@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-package com.nu.art.actionsProcessor.core;
+package com.nu.art.genericProcessor.core;
 
-import com.nu.art.software.modular.core.Module;
+import com.nu.art.modular.core.Module;
 
 import java.util.HashMap;
 

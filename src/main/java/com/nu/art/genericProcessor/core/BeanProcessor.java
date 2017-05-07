@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-package com.nu.art.actionsProcessor.core;
+package com.nu.art.genericProcessor.core;
 
-import com.nu.art.software.modular.core.ModuleItem;
+import com.nu.art.modular.core.ModuleItem;
 
 public abstract class BeanProcessor<Type extends Bean>
 		extends ModuleItem {

@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-package com.nu.art.actionsProcessor.core;
+package com.nu.art.genericProcessor.core;
 
-import com.nu.art.actionsProcessor.interfaces.IBeanBinder;
+import com.nu.art.genericProcessor.interfaces.IBeanBinder;
 
 public class BeanBinder<BeanType extends Bean>
 		implements IBeanBinder {

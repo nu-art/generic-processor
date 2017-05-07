@@ -17,21 +17,18 @@
  * limitations under the License.
  */
 
-package com.nu.art.actionsProcessor.interfaces;
+package com.nu.art.genericProcessor.core;
 
-import com.nu.art.actionsProcessor.core.Bean;
-import com.nu.art.actionsProcessor.core.BeanProcessor;
+public class Bean {
 
-/**
- * Created by tacb0ss on 10/8/16.
- */
-public interface IBeanBinder<BeanType extends Bean> {
+	private long type;
 
-	long getId();
+	public Bean(long actionId) {
+		this.type = actionId;
+	}
 
-	String getLabel();
-
-	Class<BeanType> getBeanType();
-
-	Class<? extends BeanProcessor<? super BeanType>> getHandlerType();
+	public Bean(BeanBinder beanBinder) {
+		this.type = beanBinder.getId();
+	}
 }
+
