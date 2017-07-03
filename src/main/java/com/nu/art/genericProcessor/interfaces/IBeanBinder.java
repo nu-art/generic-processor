@@ -27,11 +27,9 @@ import com.nu.art.genericProcessor.core.BeanProcessor;
  */
 public interface IBeanBinder<BeanType extends Bean> {
 
-	long getId();
-
-	String getLabel();
+	Object getType();
 
 	Class<BeanType> getBeanType();
 
-	Class<? extends BeanProcessor<? super BeanType>> getHandlerType();
+	Class<? extends BeanProcessor<BeanType>> getHandlerType();
 }

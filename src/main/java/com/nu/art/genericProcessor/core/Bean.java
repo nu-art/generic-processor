@@ -21,14 +21,14 @@ package com.nu.art.genericProcessor.core;
 
 public class Bean {
 
-	private long type;
+	protected final Object type;
 
-	public Bean(long actionId) {
-		this.type = actionId;
+	public Bean(Object type) {
+		this.type = type;
 	}
 
 	public Bean(BeanBinder beanBinder) {
-		this.type = beanBinder.getId();
+		this.type = beanBinder.getType();
 	}
 }
 

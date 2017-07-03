@@ -19,6 +19,7 @@
 
 package com.nu.art.genericProcessor.core;
 
+import com.nu.art.genericProcessor.interfaces.IBeanBinder;
 import com.nu.art.modular.core.Module;
 
 import java.util.HashMap;
@@ -26,18 +27,18 @@ import java.util.HashMap;
 public class GenericProcessor
 		extends Module {
 
-	private final HashMap<Class<? extends BeanProcessor<?>>, BeanProcessor<?>> cachedHandlers = new HashMap<>();
+	private final HashMap<Class<? extends BeanProcessor<?>>, BeanProcessor<?>> cachedProcessors = new HashMap<>();
 
 	@Override
 	protected void init() {
 	}
 
-	public final <Type extends Bean> void executeBeanAction(BeanBinder<Type> beanBinder, Type bean) {
+	public final <Type extends Bean> void executeBeanAction(IBeanBinder<Type> beanBinder, Type bean) {
 		BeanProcessor<? super Type> handler = getProcessor(beanBinder.getHandlerType());
 		handler.execute(bean);
 	}
 
-	private <Type extends Bean> void executeAction(BeanBinder<Type> beanBinder, String actionAsString, Type bean) {
+	private <Type extends Bean> void executeAction(IBeanBinder<Type> beanBinder, String actionAsString, Type bean) {
 		BeanProcessor<? super Type> handler = getProcessor(beanBinder.getHandlerType());
 		if (handler instanceof NestedProcessor) {
 			((NestedProcessor) handler).executeAction(actionAsString);
@@ -49,9 +50,9 @@ public class GenericProcessor
 
 	@SuppressWarnings("unchecked")
 	private <Type extends Bean> BeanProcessor<? super Type> getProcessor(Class<? extends BeanProcessor<? super Type>> handlerType) {
-		BeanProcessor<? super Type> handler = (BeanProcessor<? super Type>) cachedHandlers.get(handlerType);
+		BeanProcessor<? super Type> handler = (BeanProcessor<? super Type>) cachedProcessors.get(handlerType);
 		if (handler == null)
-			cachedHandlers.put(handlerType, handler = createModuleItem(handlerType));
+			cachedProcessors.put(handlerType, handler = createModuleItem(handlerType));
 		return handler;
 	}
 }

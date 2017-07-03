@@ -22,36 +22,29 @@ package com.nu.art.genericProcessor.core;
 import com.nu.art.genericProcessor.interfaces.IBeanBinder;
 
 public class BeanBinder<BeanType extends Bean>
-		implements IBeanBinder {
+		implements IBeanBinder<BeanType> {
 
-	private final long id;
-
-	private final String label;
+	private final Object id;
 
 	private final Class<BeanType> beanType;
 
-	private final Class<? extends BeanProcessor<? super BeanType>> handlerType;
+	private final Class<? extends BeanProcessor<BeanType>> handlerType;
 
-	public BeanBinder(long id, String label, Class<BeanType> beanType, Class<? extends BeanProcessor<? super BeanType>> handlerType) {
+	public BeanBinder(Object id, Class<BeanType> beanType, Class<? extends BeanProcessor<BeanType>> handlerType) {
 		this.id = id;
-		this.label = label;
 		this.beanType = beanType;
 		this.handlerType = handlerType;
 	}
 
-	public long getId() {
+	public Object getType() {
 		return id;
-	}
-
-	public String getLabel() {
-		return label;
 	}
 
 	public Class<BeanType> getBeanType() {
 		return beanType;
 	}
 
-	public Class<? extends BeanProcessor<? super BeanType>> getHandlerType() {
+	public Class<? extends BeanProcessor<BeanType>> getHandlerType() {
 		return handlerType;
 	}
 }

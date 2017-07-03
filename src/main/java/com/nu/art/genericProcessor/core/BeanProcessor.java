@@ -28,5 +28,5 @@ public abstract class BeanProcessor<Type extends Bean>
 	protected void init() {
 	}
 
-	protected abstract void execute(Type item);
+	protected abstract void execute(Type type);
 }
