@@ -1,5 +1,6 @@
 /*
- * The core of the core of all my projects!
+ * The generic-processor module, is an infrastructure extending
+ * and simplifying the command pattern.
  *
  * Copyright (C) 2017  Adam van der Kruk aka TacB0sS
  *
