@@ -25,7 +25,7 @@ import com.nu.art.modular.core.Module;
 import java.util.HashMap;
 
 public class GenericProcessor
-		extends Module {
+	extends Module {
 
 	private final HashMap<Class<? extends BeanProcessor<?>>, BeanProcessor<?>> cachedProcessors = new HashMap<>();
 

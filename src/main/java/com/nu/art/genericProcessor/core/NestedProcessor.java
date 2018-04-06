@@ -20,7 +20,7 @@
 package com.nu.art.genericProcessor.core;
 
 public abstract class NestedProcessor<Type extends Bean>
-		extends BeanProcessor<Type> {
+	extends BeanProcessor<Type> {
 
 	@Override
 	protected final void execute(Type item) {}

@@ -22,7 +22,7 @@ package com.nu.art.genericProcessor.core;
 import com.nu.art.modular.core.ModuleItem;
 
 public abstract class BeanProcessor<Type extends Bean>
-		extends ModuleItem {
+	extends ModuleItem {
 
 	@Override
 	protected void init() {

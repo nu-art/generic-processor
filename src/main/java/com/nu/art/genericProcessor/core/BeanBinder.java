@@ -22,7 +22,7 @@ package com.nu.art.genericProcessor.core;
 import com.nu.art.genericProcessor.interfaces.IBeanBinder;
 
 public class BeanBinder<BeanType extends Bean>
-		implements IBeanBinder<BeanType> {
+	implements IBeanBinder<BeanType> {
 
 	private final Object id;
 
