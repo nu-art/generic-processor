@@ -23,7 +23,7 @@ import com.nu.art.genericProcessor.core.Bean;
 import com.nu.art.genericProcessor.core.BeanProcessor;
 
 /**
- * Created by tacb0ss on 10/8/16.
+ * Created by TacB0sS on 10/8/16.
  */
 public interface IBeanBinder<BeanType extends Bean> {
 
